@@ -54,7 +54,7 @@ export default class SentryTransport extends TransportStream {
     this.silent = (opts && opts.silent) || false;
 
     if (!opts || !opts.skipSentryInit) {
-      Sentry.init(SentryTransport.withDefaults(opts && opts.sentry || {}));
+      Sentry.init(SentryTransport.withDefaults((opts && opts.sentry) || {}));
     }
   }
 
@@ -71,8 +71,6 @@ export default class SentryTransport extends TransportStream {
     const sentryLevel = this.levelsMap[winstonLevel];
 
     Sentry.configureScope((scope) => {
-      scope.clear();
-
       if (tags !== undefined && SentryTransport.isObject(tags)) {
         scope.setTags(tags);
       }
