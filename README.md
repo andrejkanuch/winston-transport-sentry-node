@@ -1,4 +1,4 @@
-
+Forked version where `scope.clear()` is removed
 # winston-transport-sentry-node
 [![CircleCI](https://circleci.com/gh/aandrewww/winston-transport-sentry-node.svg?style=svg)](https://circleci.com/gh/aandrewww/winston-transport-sentry-node)
 [![node](https://img.shields.io/badge/node-6.4.0+-brightgreen.svg)][node-url]
